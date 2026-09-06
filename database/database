@@ -1,1 +1,41 @@
 
+CREATE DATABASE ai_recommendation;
+
+USE ai_recommendation;
+
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(150) UNIQUE,
+    password VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE recommendations (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    type VARCHAR(50),
+    image VARCHAR(255),
+    result TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (user_id)
+    REFERENCES users(id)
+);
+
+
+CREATE TABLE feedback (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    recommendation_id INT,
+    rating INT,
+    comment TEXT,
+
+    FOREIGN KEY (user_id)
+    REFERENCES users(id),
+
+    FOREIGN KEY (recommendation_id)
+    REFERENCES recommendations(id)
+);
