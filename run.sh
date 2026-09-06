@@ -1,0 +1,8 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+if [ ! -f venv/bin/python ]; then
+  python3 -m venv venv
+fi
+source venv/bin/activate
+pip install -r backend/requirements.txt
+python backend/app.py
