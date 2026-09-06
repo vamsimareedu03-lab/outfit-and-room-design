@@ -1,1 +1,143 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>AI Style Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">✨ AI Style Studio</div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Login</a>
+            <a href="#">Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HOME -->
+        <section class="hero">
+            <h1>AI Personalized<br>Recommendation System</h1>
+
+            <p>
+                Get personalized outfit and room design
+                recommendations using Artificial Intelligence.
+            </p>
+
+            <button onclick="showDashboard()">
+                Get Started ✨
+            </button>
+        </section>
+
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="dashboard">
+
+            <h2>What would you like to design?</h2>
+
+            <div class="cards">
+
+                <!-- Outfit -->
+                <div class="card" onclick="selectOption('outfit')">
+                    <div class="icon">👗</div>
+
+                    <h3>Outfit Recommendation</h3>
+
+                    <p>
+                        Find personalized outfit suggestions
+                        based on your preferences.
+                    </p>
+
+                    <button>Try Outfit AI →</button>
+                </div>
+
+
+                <!-- Room -->
+                <div class="card" onclick="selectOption('room')">
+                    <div class="icon">🏠</div>
+
+                    <h3>Room Design</h3>
+
+                    <p>
+                        Get smart interior design suggestions
+                        for your room.
+                    </p>
+
+                    <button>Try Room AI →</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- UPLOAD -->
+        <section id="uploadSection" class="upload-section">
+
+            <h2 id="selectedTitle">Upload Your Image</h2>
+
+            <p>
+                Upload an outfit or room image for AI analysis.
+            </p>
+
+            <div class="upload-box">
+
+                <div class="upload-icon">📸</div>
+
+                <h3>Upload Image</h3>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                >
+
+                <button onclick="generateRecommendation()">
+                    ✨ Generate Recommendation
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULT -->
+        <section id="result" class="result">
+
+            <h2>✨ AI Recommendation</h2>
+
+            <div class="result-card">
+
+                <div class="result-icon">🤖</div>
+
+                <h3>Your Personalized Recommendation</h3>
+
+                <p id="resultText">
+                    AI will analyze your image and generate
+                    personalized suggestions.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 AI Style Studio | AI Personalized Recommendations</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
